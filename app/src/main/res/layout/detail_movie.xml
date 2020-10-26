@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.movies.MoviesMainFragment">
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingLeft="@dimen/_16sdp"
+            android:paddingRight="@dimen/_16sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image">
+
+            <ImageView
+                android:id="@+id/movieIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_alignTop="@+id/movieName"
+                android:layout_alignBottom="@+id/movieName"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_video" />
+
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_toRightOf="@+id/movieIcon"
+                android:fontFamily="@font/avenir_next_bold"
+                android:textColor="@color/hbRed"
+                android:textSize="@dimen/_25ssp"
+                tools:text="test" />
+
+            <ImageView
+                android:id="@+id/desIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/movieIcon"
+                android:layout_alignTop="@+id/description"
+                android:layout_alignBottom="@+id/description"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_document" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movieName"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_toEndOf="@+id/desIcon"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenir_next_regular"
+                android:maxLines="2"
+                android:textColor="@color/Gray_2"
+                android:textSize="@dimen/_13ssp"
+                tools:text="MovieDescriptionMovieDescriptionMovieDescriptionMovieDescriptionMovieDescription" />
+
+            <ImageView
+                android:id="@+id/rateIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/desIcon"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_podium" />
+
+
+            <RatingBar
+                android:id="@+id/rate"
+                style="@style/Base.Widget.AppCompat.RatingBar.Small.MyRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_toRightOf="@+id/rateIcon"
+                android:numStars="10"
+                android:progressTint="@color/my_red" />
+
+
+            <ImageView
+                android:id="@+id/peoplesIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/rateIcon"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_group" />
+
+
+            <TextView
+                android:id="@+id/playersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rate"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_toRightOf="@+id/peoplesIcon"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenir_next_regular"
+                android:maxLines="2"
+                android:textColor="@color/Gray_2"
+                android:textSize="@dimen/_10ssp"
+                tools:text="12000" />
+
+
+            <ImageView
+                android:id="@+id/genreIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/peoplesIcon"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_video" />
+
+
+            <TextView
+                android:id="@+id/genreName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/playersCount"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_toRightOf="@+id/peoplesIcon"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenir_next_regular"
+                android:maxLines="2"
+                android:textColor="@color/Gray_3"
+                android:textSize="@dimen/_10ssp"
+                tools:text="Game" />
+
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.app.keyvantest.api.models.response.MovieListResult" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_margin="@dimen/_12sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                loadImage="@{data.poster_path}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:contentDescription="@null" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="@+id/cardView">
+
+            <ImageView
+                android:id="@+id/movieIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_video" />
+
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_toRightOf="@+id/movieIcon"
+                android:fontFamily="@font/avenir_next_bold"
+                android:text="@{data.title}"
+                android:textColor="@color/hbRed"
+                android:textSize="@dimen/_14ssp"
+                tools:text="test" />
+
+            <ImageView
+                android:id="@+id/desIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/movieName"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_document" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movieName"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_toRightOf="@+id/desIcon"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenir_next_regular"
+                android:maxLines="2"
+                android:text="@{data.overview}"
+                android:textColor="@color/Gray_2"
+                android:textSize="@dimen/_10ssp"
+                tools:text="MovieDescriptionMovieDescriptionMovieDescriptionMovieDescriptionMovieDescription" />
+
+            <ImageView
+                android:id="@+id/rateIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/desIcon"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_podium" />
+
+
+            <RatingBar
+                android:id="@+id/rate"
+                style="@style/Base.Widget.AppCompat.RatingBar.Small.MyRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/description"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_toRightOf="@+id/rateIcon"
+                android:numStars="10"
+                android:progressTint="@color/my_red" />
+
+
+            <ImageView
+                android:id="@+id/peoplesIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/rateIcon"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_group" />
+
+
+            <TextView
+                android:id="@+id/playersCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rate"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_toRightOf="@+id/peoplesIcon"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenir_next_regular"
+                android:maxLines="2"
+                android:textColor="@color/Gray_2"
+                android:textSize="@dimen/_10ssp"
+                tools:text="12000" />
+
+
+            <ImageView
+                android:id="@+id/genreIcon"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_below="@+id/peoplesIcon"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_video" />
+
+
+            <TextView
+                android:id="@+id/genreName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/playersCount"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_toRightOf="@+id/peoplesIcon"
+                android:ellipsize="end"
+                android:fontFamily="@font/avenir_next_regular"
+                android:maxLines="2"
+                android:text="@{data.release_date}"
+                android:textColor="@color/Gray_3"
+                android:textSize="@dimen/_10ssp"
+                tools:text="Game" />
+
+
+        </RelativeLayout>
+
+
+
+        <View
+            android:id="@+id/viewSep"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/paleLavender"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
